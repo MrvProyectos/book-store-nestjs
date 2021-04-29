@@ -14,7 +14,7 @@ export class UserController {
     // }
 
     @Get(':id')
-    async getUser(@Param('id', ParseIntPipe) id: number){
+    async getUser(@Param('id', ParseIntPipe) id: number): Promise<User>{
       const user = await this._userService.get(id);
       return user;
     }
